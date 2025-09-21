@@ -23,4 +23,9 @@ export class LoginPage {
     const validateLoginBranco = this.page.getByText("×Email é obrigatório");
     await expect(validateLoginBranco).toContainText(texto);
   }
+
+  async valdiadeSenhaEmBranco(texto) {
+    const validadeSenhaEmBranco = this.page.getByText("Password é obrigatório");
+    await expect(validadeSenhaEmBranco).toContainText("Password é obrigatório");
+  }
 }

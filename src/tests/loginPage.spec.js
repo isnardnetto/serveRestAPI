@@ -30,6 +30,11 @@ test("Login em branco", async ({ page }) => {
   await loginPage.validateLoginBranco("Email é obrigatório");
 });
 
-test("Senha em branco", async ({ page }) => {});
+test("Senha em branco", async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.login("teste@gmail.com", "");
+  await loginPage.clicarBtnEntrar();
+  await loginPage.valdiadeSenhaEmBranco("Password é obrigatório");
+});
 
 test("Cadastro de novo usuário", async ({ page }) => {});
