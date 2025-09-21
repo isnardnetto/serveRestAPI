@@ -23,7 +23,12 @@ test("loginPage - error ", async ({ page }) => {
   await loginPage.validateLoginError("Email e/ou senha inválidos");
 });
 
-test("Login em branco", async ({ page }) => {});
+test("Login em branco", async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.login("", "12345");
+  await loginPage.clicarBtnEntrar();
+  await loginPage.validateLoginBranco("Email é obrigatório");
+});
 
 test("Senha em branco", async ({ page }) => {});
 

@@ -18,4 +18,9 @@ export class LoginPage {
   async clicarBtnEntrar() {
     await this.page.getByTestId("entrar").click();
   }
+
+  async validateLoginBranco(texto) {
+    const validateLoginBranco = this.page.getByText("×Email é obrigatório");
+    await expect(validateLoginBranco).toContainText(texto);
+  }
 }
