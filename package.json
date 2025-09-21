@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "npx playwright codegen https://front.serverest.dev/login"
+    "generate": "npx playwright codegen https://front.serverest.dev/login",
+    "test": "npx playwright test",
+    "test:grep": "npx playwright test -g",
+    "test:headed:grep": "npx playwright test --headed -g"
   },
   "keywords": [],
   "author": "",
