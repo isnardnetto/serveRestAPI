@@ -36,5 +36,3 @@ test("Senha em branco", async ({ page }) => {
   await loginPage.clicarBtnEntrar();
   await loginPage.valdiadeSenhaEmBranco("Password é obrigatório");
 });
-
-test("Cadastro de novo usuário", async ({ page }) => {});
