@@ -7,7 +7,10 @@
     "generate": "npx playwright codegen https://front.serverest.dev/login",
     "test": "npx playwright test",
     "test:grep": "npx playwright test -g",
-    "test:headed:grep": "npx playwright test --headed -g"
+    "test:headed:grep": "npx playwright test --headed -g",
+    "test:api": "npx playwright test src/tests/api",
+    "test:e2e": "npx playwright test src/tests/e2e",
+    "report": "npx playwright show-report"
   },
   "keywords": [],
   "author": "",

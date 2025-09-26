@@ -5,8 +5,8 @@ export class CadastroDeUsuario {
     this.page = page;
   }
 
-  async preencherCadastroAdm(nome, email, senha) {
-    await this.page.getByTestId("nome").fill(nome);
+  async preencherCadastroAdm(name, email, senha) {
+    await this.page.getByTestId("nome").fill(name);
     await this.page.getByTestId("email").fill(email);
     await this.page.getByTestId("password").fill(senha);
     await this.page.getByTestId("checkbox").check();

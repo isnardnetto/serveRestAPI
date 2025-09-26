@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { LoginPage } from "../pages/loginPage.js";
+import { LoginPage } from "../../pages/loginPage.js";
 
 test.beforeEach(async ({ page }) => {
   await page.goto("https://front.serverest.dev/login");

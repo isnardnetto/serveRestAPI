@@ -2,14 +2,19 @@ import { test, expect } from "@playwright/test";
 
 let userId;
 
+function generateUser() {
+  const random = Math.floor(Math.random() * 100000);
+  return {
+    nome: `Isnard API${random}`,
+    email: `testeAPI${random}@gmail.com`,
+    password: "teste",
+    administrador: "true",
+  };
+}
+
 test.describe.serial("CRUD User", () => {
   test("Create a user", async ({ request }) => {
-    const userBody = {
-      nome: "Isnard API16",
-      email: "testeAPI16@gmail.com",
-      password: "teste",
-      administrador: "true",
-    };
+    const userBody = generateUser();
 
     const response = await request.post("https://serverest.dev/usuarios", {
       data: userBody,

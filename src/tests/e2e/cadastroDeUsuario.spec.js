@@ -1,5 +1,13 @@
 import { test, expect } from "@playwright/test";
-import { CadastroDeUsuario } from "../pages/cadastroDeUsuarioPage.js";
+import { CadastroDeUsuario } from "../../pages/cadastroDeUsuarioPage.js";
+
+function generateRandomUser() {
+  const random = Math.floor(Math.random() * 100000);
+  return {
+    name: `Neo${random}`,
+    email: `neo${random}@gmail.com`,
+  };
+}
 
 test.beforeEach(async ({ page }) => {
   await page.goto("https://front.serverest.dev/cadastrarusuarios");
@@ -12,11 +20,9 @@ test.afterEach(async ({ page }, testInfo) => {
 
 test("Cadastro com sucesso", async ({ page }) => {
   const cadastroDeUsuario = new CadastroDeUsuario(page);
-  await cadastroDeUsuario.preencherCadastroAdm(
-    "Neo",
-    "Neo@gmail.com",
-    "nabuco"
-  );
+  const user = generateRandomUser();
+
+  await cadastroDeUsuario.preencherCadastroAdm(user.name, user.email, "nabuco");
 
   await cadastroDeUsuario.clicarBtnCadastro();
 
